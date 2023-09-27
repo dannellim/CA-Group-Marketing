@@ -25,8 +25,8 @@ export class HomeComponent {
       ? navigator.languages[0]
       : navigator.language;
     console.log("device lang: " + userLocale);
-    if (lang?.toLowerCase() != userLocale.substring(0, 2).toLowerCase())
-      this.router.navigate(['/home/' + userLocale.substring(0, 2).toLowerCase()]);
+    // if (lang?.toLowerCase() != userLocale.substring(0, 2).toLowerCase())
+    //   this.router.navigate(['/home/' + userLocale.substring(0, 2).toLowerCase()]);
     var website_title = await this.translationService.getTranslation(lang, "website_title");
     this.titleService.setTitle(website_title);
     this.websiteHeader = await this.translationService.getTranslation(lang, "website_header");

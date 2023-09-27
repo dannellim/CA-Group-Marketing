@@ -10,7 +10,7 @@ export class LanguageJsonService {
   async getLanguageJson(lang: string): Promise<string> {
     var json = "";
     try {
-      var jsonData = await firstValueFrom(this.httpClient.get(`../assets/languages/${lang}.json`));
+      var jsonData = await firstValueFrom(this.httpClient.get(`/assets/languages/${lang}.json`));
       if (jsonData)
         json = JSON.stringify(jsonData);
     }
