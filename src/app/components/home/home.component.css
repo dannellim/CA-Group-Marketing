@@ -1,0 +1,26 @@
+.home_logo {
+    width: 15%;
+    box-shadow: 4px 4px 8px;
+    border-radius: 0 0 4px 4px;
+}
+
+.home_logo_container {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    text-align: center;
+}
+
+.home_bg {
+    position: absolute;
+    clear: both;
+    float: none;
+    width: 100%;
+}
+
+.home_container {
+    position: relative;
+    clear: none;
+    margin: 0 auto;
+    display: block;
+}
