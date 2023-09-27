@@ -17,6 +17,7 @@ export class HomeComponent {
     await this.setWebsiteTitle();
     this.loader.setLoading(false);
   }
+  websiteHeader: string = "";
   private async setWebsiteTitle() {
     const lang = this.route.snapshot.paramMap.get('lang');
     console.log("parameter lang: " + lang);
@@ -28,5 +29,6 @@ export class HomeComponent {
       this.router.navigate(['/home/' + userLocale.substring(0, 2).toLowerCase()]);
     var website_title = await this.translationService.getTranslation(lang, "website_title");
     this.titleService.setTitle(website_title);
+    this.websiteHeader = await this.translationService.getTranslation(lang, "website_header");
   }
 }
