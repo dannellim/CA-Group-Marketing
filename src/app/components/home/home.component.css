@@ -11,14 +11,28 @@
     text-align: center;
 }
 
+.home_footer {
+    width: 50%;
+}
+
+.home_footer_container {
+    width: 100%;
+    position: absolute;
+    text-align: center;
+    bottom: 0;
+}
+
 .home_bg {
     position: absolute;
     clear: both;
     float: none;
-    width: 100%;
+    width: 100.2%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .home_container {
+    height: 100dvh;
     position: relative;
     clear: none;
     margin: 0 auto;
