@@ -16,7 +16,7 @@ export class ConfigService {
   getSupportedLanguages(): string[] {
     return ConfigService.SUPPORTED_LANGUAGES;
   }
-  getLanguagesApi(){
+  getLanguagesApi(): string {
     return ConfigService.LANGUAGES_API;
   }
 }
