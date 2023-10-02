@@ -8,11 +8,12 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { ConfigService } from './services/config/config.service';
 
 // AoT requires an exported function for factories
-export function HttpLoaderFactory(http: HttpClient, config: ConfigService) {
-  return new TranslateHttpLoader(http, config.getLanguagesApi(), '.json');
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http, 
+    './assets/i18n/', 
+    '.json');
 }
 
 @NgModule({
@@ -27,6 +28,7 @@ export function HttpLoaderFactory(http: HttpClient, config: ConfigService) {
     HttpClientModule,
     FormsModule,
     TranslateModule.forRoot({
+      defaultLanguage: 'fr',
       loader: {
         provide: TranslateLoader,
         useFactory: HttpLoaderFactory,
