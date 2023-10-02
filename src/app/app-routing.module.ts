@@ -3,8 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/home/en', pathMatch: 'full' },
-  { path: 'home', redirectTo: '/home/en', pathMatch: 'full' },
+  { path: '', redirectTo: '/home/fr', pathMatch: 'full' },
+  { path: 'home', redirectTo: '/home/fr', pathMatch: 'full' },
   { path: 'home/:lang', component: HomeComponent },
 ];
 
