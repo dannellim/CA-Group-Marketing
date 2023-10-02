@@ -13,6 +13,9 @@ MIT
 @angular/router
 MIT
 
+@ngx-translate/core
+SEE LICENSE IN LICENSE
+
 rxjs
 Apache-2.0
                                Apache License
