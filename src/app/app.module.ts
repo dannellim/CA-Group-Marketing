@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SpinnerComponent } from './components/spinner/spinner.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    TranslateModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
