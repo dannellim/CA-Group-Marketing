@@ -4,9 +4,16 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { SpinnerComponent } from './components/spinner/spinner.component';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { ConfigService } from './services/config/config.service';
+
+// AoT requires an exported function for factories
+export function HttpLoaderFactory(http: HttpClient, config: ConfigService) {
+  return new TranslateHttpLoader(http, config.getLanguagesApi(), '.json');
+}
 
 @NgModule({
   declarations: [
@@ -19,7 +26,13 @@ import { TranslateModule } from '@ngx-translate/core';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    TranslateModule.forRoot()
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

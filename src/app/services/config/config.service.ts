@@ -5,6 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class ConfigService {
   private static readonly SUPPORTED_LANGUAGES = ["fr", "en", "de"];
+  private static readonly LANGUAGES_API = "https://raw.githubusercontent.com/dannellim/ca_group/main/src/assets/i18n/";
   constructor() { }
   isLanguageSupported(language: string | null): boolean {
     if (language) {
@@ -14,5 +15,8 @@ export class ConfigService {
   }
   getSupportedLanguages(): string[] {
     return ConfigService.SUPPORTED_LANGUAGES;
+  }
+  getLanguagesApi(){
+    return ConfigService.LANGUAGES_API;
   }
 }
